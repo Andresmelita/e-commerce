@@ -1,20 +1,32 @@
+import axios from 'axios'
 import React, { useState } from 'react'
+import getConfig from '../../utils/getConfig'
 import './styles/productInfo.css'
 
 const ProductInfo = ({product}) => {
 
-const [counter, setCounter] = useState(1)
+    const [counter, setCounter] = useState(1)
 
-const handleMinus = () => {
-    if (counter-1 > 0) {
-        setCounter(counter-1)
+    const handleMinus = () => {
+        if (counter-1 > 0) {
+            setCounter(counter-1)
+        }
     }
-}
 
-const handlePlus = () => {
-    setCounter(counter + 1)
-}
+    const handlePlus = () => {
+        setCounter(counter + 1)
+    }
 
+    const handleAddCart = () => {
+        const URL = 'https://ecommerce-api-react.herokuapp.com/api/v1/cart'
+        const data = {
+            id: product.id,
+            quantity: counter
+        }
+        axios.post(URL, data, getConfig())
+            .then(res => console.log(res.data))
+            .catch(err => console.log(err))
+    }
 
     return (
         <article className='product-info'>
@@ -33,7 +45,7 @@ const handlePlus = () => {
                         <div onClick={handlePlus} className='counter_plus'>+</div>
                     </div>
                 </div>
-                <button className='product-info_btn'>Add To Cart <i className="product-info_icon fa-solid fa-cart-shopping"></i></button>
+                <button  onClick={handleAddCart} className='product-info_btn'>Add To Cart <i className="product-info_icon fa-solid fa-cart-shopping"></i></button>
             </footer>
         </article>
     )

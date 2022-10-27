@@ -1,11 +1,15 @@
 import React from 'react'
+import { useState } from 'react'
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import CardProduct from '../components/home/CardProduct'
+import InputSearch from '../components/home/InputSearch'
 import { getAllProducts } from '../store/slices/products.slice'
-import home from './styles/home.css'
+import './styles/home.css'
 
 const Home = () => {
+    const [inputText, setInputText] = useState('')
+    const [filterByText, setFilterByText] = useState()
 
     const products = useSelector(state => state.products)
 
@@ -15,17 +19,29 @@ const Home = () => {
         dispatch(getAllProducts())
     }, [])
     
+    useEffect (()=>{
 
-    console.log(products)
+        if(inputText !== '' && products){
+            const cb = (product) => product.title.toLowerCase().includes(inputText.toLowerCase().trim())
+            setFilterByText(products.filter(cb))
+        } else {
+            setFilterByText(products)
+        }
+
+    }, [inputText, products])
 
     return (
         <main className='home'>
+            <InputSearch
+                setInputText={setInputText}
+                inputText={inputText}
+            />
             <div className='home_container'>
                 {
-                    products?.map(product => (
+                    filterByText?.map(product =>(
                         <CardProduct
-                        key={product.id}
-                        product={product}
+                            key={product.id}
+                            product={product}
                         />
                     ))
                 }
