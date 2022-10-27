@@ -1,0 +1,9 @@
+.card-p_icon {
+    font-size: 20px;
+    color: white;
+}
+
+.card-p_btn {
+    background-color: var(--bg-color-red);
+    cursor: pointer;
+}
