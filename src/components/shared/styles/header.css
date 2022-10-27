@@ -1,0 +1,21 @@
+.title {
+    margin: 0;
+    display: flex;
+    position: relative;
+}
+
+.header_title {
+    margin-top: 15px;
+    margin-left: 30px;
+}
+
+.header_div {
+    padding: 0;
+}
+
+.header_list {
+    position: absolute;
+    display: flex;
+    gap: 2rem;
+    background-color: aqua;
+}
