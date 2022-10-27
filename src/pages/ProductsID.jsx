@@ -4,6 +4,7 @@ import { useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import ProductInfo from '../components/productId/ProductInfo'
 import SimilarProduct from '../components/productId/SimilarProduct'
+import SliderImgs from '../components/productId/SliderImgs'
 
 const ProductsID = () => {
 
@@ -23,6 +24,9 @@ const ProductsID = () => {
 
     return (
         <div>
+            {
+                product && <SliderImgs product={product}/>
+            }
             <ProductInfo product={product}/>
             <SimilarProduct product={product}/>
         </div>
