@@ -3,6 +3,7 @@ import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import CardProduct from '../components/home/CardProduct'
 import { getAllProducts } from '../store/slices/products.slice'
+import home from './styles/home.css'
 
 const Home = () => {
 
@@ -19,7 +20,7 @@ const Home = () => {
 
     return (
         <main className='home'>
-            <div className='home_container'></div>
+            <div className='home_container'>
                 {
                     products?.map(product => (
                         <CardProduct
@@ -28,6 +29,7 @@ const Home = () => {
                         />
                     ))
                 }
+            </div>
         </main>
     )
 }
