@@ -1,21 +1,45 @@
-.title {
+.header{
     margin: 0;
-    display: flex;
-    position: relative;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    justify-content: space-around;
+    margin-bottom: 20px;
+
 }
 
 .header_title {
-    margin-top: 15px;
-    margin-left: 30px;
+    margin-left: 20px;
+    font-size: 35px;
+
 }
 
-.header_div {
-    padding: 0;
+.ecommerce {
+    text-decoration-line: none;
+    color: var(--bg-color-red);
+}
+
+.content {
+    text-decoration: none;
+}
+
+.header_nav {
+    align-content: center;
+    border: 2px solid rgb(230, 230, 230);
+
 }
 
 .header_list {
-    position: absolute;
-    display: flex;
-    gap: 2rem;
-    background-color: aqua;
+    display: grid;
+    justify-items: center;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.header_item {
+    margin-top: 10px;
+}
+
+.header_link {
+    text-decoration-line: none;
 }
