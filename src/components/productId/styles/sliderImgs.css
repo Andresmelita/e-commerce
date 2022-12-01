@@ -2,6 +2,7 @@
     padding: 20px 50px;
     position: relative;
     width: max-content;
+    background-color: bisque;
 }
 
 .slider_static {
@@ -9,6 +10,7 @@
     max-width: 500px;
     aspect-ratio: 1.5;
     overflow: hidden;
+    background-color: aqua;
 }
 
 .slider_prev, .slider_next {

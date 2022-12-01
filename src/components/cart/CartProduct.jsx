@@ -23,7 +23,7 @@ const CartProduct = ({product}) => {
     return (
         <article className='cart-p'>
             <h2>{product.title}</h2>
-            <ul>
+            <ul className='info'>
                 <li><span>Price: </span>{product.price}</li>
                 <li><span>Quantity: </span>{product.productsInCart.quantity}</li>
             </ul>

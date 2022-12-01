@@ -48,6 +48,7 @@
 
 .product_price-number {
     display: flex;
+    display: none;
     gap: 5px;
     transform: translateX(10px);
     font-weight: 500;

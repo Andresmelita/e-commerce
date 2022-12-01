@@ -1,5 +1,6 @@
 import { Route, Routes } from 'react-router-dom'
 import './App.css'
+import Cover from './components/Cover'
 import Header from './components/shared/Header'
 import Cart from './pages/Cart'
 import Home from './pages/Home'
@@ -32,6 +33,7 @@ function App() {
 
   return (
     <div className="App">
+      <Cover/>
       <Header/>
       <Routes>
         <Route path='/' element={<Home />} />
